@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Mail, MessageCircle, Zap, Coffee } from 'lucide-react';
+import MiniGame from './MiniGame';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -11,16 +12,18 @@ const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [konamiCode, setKonamiCode] = useState([]);
     const [showKonami, setShowKonami] = useState(false);
+    const [showGame, setShowGame] = useState(false);
 
     const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleKeyDown = (e) => {
             const newCode = [...konamiCode, e.key].slice(-8);
             setKonamiCode(newCode);
 
             if (newCode.join('') === konamiSequence.join('')) {
                 setShowKonami(true);
+                setShowGame(true);
                 setTimeout(() => setShowKonami(false), 4000);
                 setKonamiCode([]);
             }
@@ -49,7 +52,7 @@ const ContactSection = () => {
             });
 
             if (response.ok) {
-                alert('Thank you for your message! We&apos;ll get back to you soon. 🚀');
+                alert('Thank you for your message! We&aspos;ll get back to you soon. 🚀');
                 setFormData({ name: '', email: '', message: '' });
             } else {
                 alert('There was an error sending your message. Please try again.');
@@ -67,6 +70,10 @@ const ContactSection = () => {
             ...formData,
             [e.target.name]: e.target.value
         });
+    };
+
+    const closeGame = () => {
+        setShowGame(false);
     };
 
     return (
@@ -176,7 +183,16 @@ const ContactSection = () => {
                                 <Zap className="contact-konami-icon pulse" />
                             </div>
                             <h3 className="contact-konami-title">🎮 Konami Code Activated!</h3>
-                            <p className="contact-konami-text">You've unlocked the secret developer mode! 30 lives granted! 🚀</p>
+                            <p className="contact-konami-text">You've unlocked a mini-game! Catch the stars! 🚀</p>
+                        </div>
+                    </div>
+                )}
+
+                {showGame && (
+                    <div className="game-modal">
+                        <div className="game-modal-content">
+                            <button onClick={closeGame} className="game-close-button">Close</button>
+                            <MiniGame />
                         </div>
                     </div>
                 )}

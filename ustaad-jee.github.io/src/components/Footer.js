@@ -55,7 +55,7 @@ const Footer = () => {
                         </div>
                         <div className="footer-powered">
                             <div className="footer-powered-content">
-                               
+
                             </div>
                         </div>
                     </div>
