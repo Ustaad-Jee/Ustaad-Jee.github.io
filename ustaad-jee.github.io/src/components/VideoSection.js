@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 import './VideoSection.css';
+import demoVideo from './demo.mp4'
 
 const VideoSection = () => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -44,7 +45,7 @@ const VideoSection = () => {
                             </button>
                         ) : (
                             <video className="video-player-video" controls>
-                                <source src="ustaad-jee.github.io/src/components/demo.mp4" type="video/mp4" />
+                                <source src={demoVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         )}
