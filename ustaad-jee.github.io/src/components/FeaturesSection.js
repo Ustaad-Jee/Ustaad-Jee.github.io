@@ -15,9 +15,9 @@ const features = [
         icon: "book",
         title: "Technical Glossary",
         description: "Build and manage comprehensive technical dictionaries with AI-powered definitions.",
-        details: "Create custom glossaries, add technical terms, and get AI-generated explanations in multiple languages.",
-        bgClass: "bg-blue",
-        gradientClass: "gradient-cyan-turquoise",
+        details: "Create custom glossaries, add technical terms, and get AI-generated explanations in Urdu",
+        bgClass: "bg-green",
+        gradientClass: "gradient-turquoise-cyan",
     },
     {
         icon: "globe",
@@ -32,8 +32,8 @@ const features = [
         title: "Interactive Chat",
         description: "Chat with documents using our AI-powered chatbot for clarifications.",
         details: "Upload documents and have intelligent conversations about their content with contextual understanding.",
-        bgClass: "bg-purple",
-        gradientClass: "gradient-cyan-light",
+        bgClass: "bg-green",
+        gradientClass: "gradient-turquoise-cyan",
     }
 
 ];
@@ -93,10 +93,7 @@ const FeaturesSection = () => {
             </div>
             <div className="features-container">
                 <div className="features-header">
-                    <div className="features-badge">
-                        {createSparklesIcon()}
-                        <span>Powerful Features</span>
-                    </div>
+
                     <h2 className="features-title">
                         Key Features of <span className="features-title-gradient">Ustaad Jee's</span>
                         <br />

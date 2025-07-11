@@ -14,6 +14,9 @@ const AboutSection = () => {
             setSecretClicks(0);
         }
     };
+    const handleUstaadJee= () => {
+        window.open('https://ustaadjee.streamlit.app/', '_blank');
+    };
 
     return (
         <section id="about" className="about-section">
@@ -29,7 +32,7 @@ const AboutSection = () => {
                             <span className="about-title-highlight">Our Mission</span>
                         </h2>
                         <p className="about-text">
-                            10x Engineers Knowledge Hub bridges the critical gap between technical education and language accessibility.
+                            UstaadJee's Knowledge Hub bridges the critical gap between technical education and language accessibility.
                             We recognize that developers think and process information more naturally in their native language, making
                             technical education more effective and inclusive for the Urdu-speaking community.
                         </p>
@@ -67,9 +70,9 @@ const AboutSection = () => {
                                         </div>
                                     )}
                                 </div>
-                                <h3 className="about-card-title">Ready to Code?</h3>
-                                <p className="about-card-text">Join thousands of developers accessing technical knowledge in their native language</p>
-                                <button className="about-card-button">
+                                <h3 className="about-card-title">Ready to Learn?</h3>
+                                <p className="about-card-text">Let's Go~</p>
+                                <button className="about-card-button" onClick={handleUstaadJee}>
                                     <Rocket className="about-card-button-icon" />
                                     <span>Start Your Journey</span>
                                 </button>
@@ -89,7 +92,7 @@ const AboutSection = () => {
                                 <Code className="about-secret-icon spin" />
                             </div>
                             <h3 className="about-secret-title">🎉 Developer Secret!</h3>
-                            <p className="about-secret-text">We're just a bunch of developers who love coffee, code, and making tech accessible to everyone! ☕💻❤️</p>
+                            <p className="about-secret-text">ive consumed sooo much coffee while creating this project! ☕</p>
                         </div>
                     </div>
                 )}
