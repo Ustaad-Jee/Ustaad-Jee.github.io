@@ -1,0 +1,178 @@
+/* Features Section */
+.features-section {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom right, #e6fffa, #e0ffff, #e0f2fe); /* Matches HeroSection */
+    position: relative;
+    overflow: hidden;
+}
+
+.features-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.features-bg-circle-top {
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    width: 12rem;
+    height: 12rem;
+    background: linear-gradient(to bottom right, rgba(0, 206, 209, 0.4), rgba(64, 224, 208, 0.4)); /* Matches HeroSection */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: pulse 2s infinite;
+}
+
+.features-bg-circle-right {
+    position: absolute;
+    top: 10rem;
+    right: 5rem;
+    width: 10rem;
+    height: 10rem;
+    background: linear-gradient(to bottom right, rgba(64, 224, 208, 0.4), rgba(0, 206, 209, 0.4)); /* Matches HeroSection */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: pulse 2s infinite 1s;
+}
+
+.features-bg-circle-bottom {
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+    width: 8rem;
+    height: 8rem;
+    background: linear-gradient(to bottom right, rgba(0, 206, 209, 0.3), rgba(64, 224, 208, 0.3)); /* Matches HeroSection */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: pulse 2s infinite 2s;
+}
+
+.features-bg-circle-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14rem;
+    height: 14rem;
+    background: linear-gradient(to bottom right, rgba(64, 224, 208, 0.4), rgba(224, 255, 255, 0.4)); /* Matches HeroSection */
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: pulse 2s infinite 0.5s;
+}
+
+.features-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .features-title {
+        font-size: 3rem;
+    }
+}
+
+.features-title-highlight {
+    background: linear-gradient(to right, #00ced1, #40e0d0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.features-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 48rem;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.features-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom right, #ffffff, #f3f4f6);
+    border: 1px solid #e0f2fe;
+    overflow: hidden;
+}
+
+.features-card-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+}
+
+.features-bg-blue { background: linear-gradient(to bottom right, #00ced1, #40e0d0); }
+.features-bg-green { background: linear-gradient(to bottom right, rgba(0, 206, 209, 0.4), rgba(64, 224, 208, 0.4)); } /* Adjusted to match HeroSection */
+.features-bg-purple { background: linear-gradient(to bottom right, rgba(0, 206, 209, 0.3), rgba(64, 224, 208, 0.3)); } /* Adjusted to match HeroSection */
+.features-bg-indigo { background: linear-gradient(to bottom right, rgba(64, 224, 208, 0.4), rgba(0, 206, 209, 0.4)); } /* Adjusted to match HeroSection */
+
+.features-icon-container {
+    display: inline-flex;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom right, #e6fffa, #e0f2fe);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.features-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #1f2937;
+}
+
+.features-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+}
+
+.features-card-text {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
