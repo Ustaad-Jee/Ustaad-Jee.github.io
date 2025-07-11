@@ -44,7 +44,7 @@ const VideoSection = () => {
                             </button>
                         ) : (
                             <video className="video-player-video" controls>
-                                <source src="path/to/your/video.mp4" type="video/mp4" />
+                                <source src="ustaad-jee.github.io/src/components/demo.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         )}
