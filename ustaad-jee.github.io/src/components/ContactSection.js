@@ -38,24 +38,26 @@ const ContactSection = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('https://formspree.io/f/your-form-id', {
+
+            const response = await fetch('https://formspree.io/f/mqabryag', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
                     _subject: `New Contact Form Submission from ${formData.name}`,
                     _replyto: formData.email,
-                    _to: 'app_support@10xengineers.ai',
                 }),
             });
 
             if (response.ok) {
-                alert('Thank you for your message! We&aspos;ll get back to you soon. 🚀');
+                alert('Thank you for your message! We\'ll get back to you soon. 🚀');
                 setFormData({ name: '', email: '', message: '' });
             } else {
-                alert('There was an error sending your message. Please try again.');
+                throw new Error('Form submission failed');
             }
         } catch (error) {
             console.error('Form submission error:', error);
@@ -97,7 +99,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="contact-form-container">
-                    <div className="contact-form">
+                    <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="contact-form-bg"></div>
                         <div className="contact-form-content">
                             <div className="contact-form-group">
@@ -154,7 +156,7 @@ const ContactSection = () => {
                             </div>
 
                             <button
-                                onClick={handleSubmit}
+                                type="submit"
                                 disabled={isSubmitting}
                                 className={`contact-button ${isSubmitting ? 'contact-button-disabled' : ''}`}
                             >
@@ -171,7 +173,7 @@ const ContactSection = () => {
                                 )}
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 {showKonami && (
@@ -183,7 +185,7 @@ const ContactSection = () => {
                                 <Zap className="contact-konami-icon pulse" />
                             </div>
                             <h3 className="contact-konami-title">🎮 Konami Code Activated!</h3>
-                            <p className="contact-konami-text">You've unlocked a mini-game! Catch the stars! 🚀</p>
+                            <p className="contact-konami-text">WASD/Arrow keys for full directional movement + SPACEBAR to shoot</p>
                         </div>
                     </div>
                 )}
