@@ -73,6 +73,7 @@ const Navbar = ({ isVisible }) => {
                         <button className="navbar-mobile-signin">
                             <Zap className="navbar-signin-icon" />
                             <span>Sign In</span>
+
                         </button>
                     </div>
                 </div>
