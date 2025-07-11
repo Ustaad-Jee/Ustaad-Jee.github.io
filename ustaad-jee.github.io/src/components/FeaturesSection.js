@@ -85,7 +85,7 @@ const FeaturesSection = () => {
     ];
 
     return (
-        <section className="features-section">
+        <section id="features" className="features-section">
             <div className="features-bg">
                 <div className="features-bg-circle-top"></div>
                 <div className="features-bg-circle-right"></div>
